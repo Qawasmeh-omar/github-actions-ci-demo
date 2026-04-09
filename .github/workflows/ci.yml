@@ -1,0 +1,45 @@
+name: CI Pipeline Demo
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-test-package:
+    runs-on: ubuntu-latest
+
+    env:
+      APP_MODE: ci
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run ETL
+        run: python etl.py
+
+      - name: Run tests
+        run: pytest
+
+      - name: Package project
+        run: zip -r student-portal-demo.zip . -x "*.git*" "*__pycache__*" "*.pytest_cache*" "*.venv*"
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: student-portal-demo
+          path: |
+            student-portal-demo.zip
+            output/cleaned_students.csv

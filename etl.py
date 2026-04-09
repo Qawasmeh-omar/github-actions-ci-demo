@@ -13,7 +13,7 @@ def clean_students(df: pd.DataFrame) -> pd.DataFrame:
             raise ValueError(f"Missing required column: {col}")
 
     df = df.dropna(subset=["name"])
-   # df = df.drop_duplicates(subset=["student_id"])
+    df = df.drop_duplicates(subset=["student_id"])
     df["age"] = df["age"].astype(int)
     df["score"] = df["score"].astype(int)
 

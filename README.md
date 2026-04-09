@@ -793,10 +793,3 @@ The score-range test fails.
 Shows business/data constraint validation.
 
 ---
-
-# Git Commands
-
-A strong summary for students is:
-
-> CI/CD is a pipeline of automated quality gates.  
-> A change moves forward only if it satisfies the required rules.

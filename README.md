@@ -165,7 +165,7 @@ It performs:
 ## 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/YOUR-REPO.git
+git clone https://github.com/Qawasmeh-omar/github-actions-ci-demo.git
 cd YOUR-REPO
 ```
 
@@ -693,7 +693,7 @@ def test_output_no_duplicate_ids():
 
 ---
 
-# How to Demonstrate Errors in Class
+# How to Demonstrate Errors
 
 A good CI/CD lesson should show both:
 
@@ -794,104 +794,7 @@ Shows business/data constraint validation.
 
 ---
 
-# Suggested Classroom Demo Flow
-
-## Step 1 — Show success
-
-```bash
-pytest
-```
-
-Explain that all defined quality checks currently pass.
-
-## Step 2 — Introduce a small bug
-For example:
-- wrong homepage text,
-- wrong grading rule,
-- duplicate removal removed in ETL.
-
-## Step 3 — Run tests again
-
-```bash
-pytest
-```
-
-Now one or more tests should fail.
-
-## Step 4 — Explain the failure
-Show students:
-- which test failed,
-- what was expected,
-- what was actually observed,
-- why CI/CD should stop the change.
-
-## Step 5 — Fix the code
-Restore the correct behavior.
-
-## Step 6 — Rerun tests
-
-```bash
-pytest
-```
-
-Now the pipeline is healthy again.
-
----
-
 # Git Commands
-
-## Initial clean push
-
-```bash
-git init
-git add .
-git commit -m "Initial clean CI/CD demo"
-git branch -M main
-git remote add origin https://github.com/YOUR-USERNAME/YOUR-REPO.git
-git push -u origin main
-```
-
-## Normal update push
-
-```bash
-git add .
-git commit -m "Update CI/CD demo"
-git push
-```
-
----
-
-# Recommended `.gitignore`
-
-```gitignore
-.venv/
-.pytest_cache/
-__pycache__/
-*.pyc
-output/
-```
-
----
-
-# Recommended `pytest.ini`
-
-```ini
-[pytest]
-pythonpath = .
-```
-
----
-
-# Final Takeaway
-
-This repository is intentionally small, but it demonstrates an important and realistic idea:
-
-- CI/CD is not only about build and deployment,
-- it is also about automated verification,
-- quality control,
-- configuration checking,
-- data validation,
-- and trustworthy outputs.
 
 A strong summary for students is:
 

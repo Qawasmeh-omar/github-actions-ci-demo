@@ -201,6 +201,17 @@ pip install -r requirements.txt
 pytest
 ```
 
+What is ```pytest``` ?
+
+- pytest is a Python testing framework.
+- It is used to run tests automatically and check whether your code behaves correctly.
+- GitHub Actions will execute the pytest command
+- pytest will search for test files such as:
+    - test_example.py
+    - test_etl.py
+    - files inside a tests/ folder
+- then it runs the test functions inside them, usually functions like:
+
 If everything is correct, you should see something like:
 
 ```text
